@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ni.edu.uam.practicahilos.controller.ProcesadorController"
+      alignment="CENTER"
+      spacing="20"
+      prefWidth="600"
+      prefHeight="450">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Monitor de Procesamiento - NicaData Solutions" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- SECCIÓN CLIENTES -->
+    <VBox spacing="10" style="-fx-border-color: gray; -fx-border-radius: 5; -fx-padding: 15;">
+        <Label text="Procesamiento de Clientes (100 Registros)" style="-fx-font-size: 16px;"/>
+        <Label fx:id="lblEstadoClientes" text="Esperando inicio..."/>
+        <ProgressBar fx:id="barraClientes" progress="0" prefWidth="500"/>
+        <Label fx:id="lblPorcentajeClientes" text="0%"/>
+        <HBox spacing="10">
+            <Button fx:id="btnIniciarClientes" text="Iniciar Clientes" onAction="#iniciarClientes"/>
+            <Button fx:id="btnDetenerClientes" text="Detener Clientes" onAction="#detenerClientes" disable="true"/>
+        </HBox>
+    </VBox>
+
+    <!-- SECCIÓN PRODUCTOS -->
+    <VBox spacing="10" style="-fx-border-color: gray; -fx-border-radius: 5; -fx-padding: 15;">
+        <Label text="Procesamiento de Productos (50 Registros)" style="-fx-font-size: 16px;"/>
+        <Label fx:id="lblEstadoProductos" text="Esperando inicio..."/>
+        <ProgressBar fx:id="barraProductos" progress="0" prefWidth="500"/>
+        <Label fx:id="lblPorcentajeProductos" text="0%"/>
+        <HBox spacing="10">
+            <Button fx:id="btnIniciarProductos" text="Iniciar Productos" onAction="#iniciarProductos"/>
+            <Button fx:id="btnDetenerProductos" text="Detener Productos" onAction="#detenerProductos" disable="true"/>
+        </HBox>
+    </VBox>
+
+    <Button text="Reiniciar Todo" onAction="#reiniciarTodo" style="-fx-margin-top: 10px;"/>
+</VBox>
